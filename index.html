@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencias Cercanas</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="stylesheet" type="text/css" href="./style.css?v=<?php echo (rand())?>" />
+    <script type="module" src="./index.js?v=<?php echo (rand())?>"></script>
+  </head>
+  <body>
+    <h1>¿Buscas una agencia cercana?</h1>
+    <div id="floating-panel">
+      <p>¡¡¡Presione el botón para obtener indicaciones sobre como llegar a su agencia mas cercana!!!</p>
+      <div id="miUbi"></div>
+      <b>Seleccione una Agencia: </b>
+      <select id="end">
+        <option value="88MR+HV2, Av. Daniel León Borja, Riobamba">Agencia Parque Infantil</option>
+        <option value="88HX+PHR, García Moreno, Riobamba">Agencia Centro</option>
+        <option value="88HW+2FW, Gaspar de Villarroel, Riobamba">Agencia Santa Rosa</option>
+      </select>
+    </div>
+    <div id="map"></div>
+    &nbsp;
+    <div id="warnings-panel"></div>
+
+    <!-- 
+      The `defer` attribute causes the script to execute after the full HTML
+      document has been parsed. For non-blocking uses, avoiding race conditions,
+      and consistent behavior across browsers, consider loading using Promises. See
+      https://developers.google.com/maps/documentation/javascript/load-maps-js-api
+      for more information.
+      -->
+    <script async
+      src="https://maps.googleapis.com/maps/api/js?key=[Aquí va su API KEY]&loading=async&callback=initMap&v=weekly"
+      defer
+    ></script>
+  </body>
+</html> 
